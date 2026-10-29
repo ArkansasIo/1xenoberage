@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a1119">
+  <meta name="description" content="Xenobe Rage — classic browser-based space empire command interface demo.">
+  <title>Xenobe Rage — Command Center</title>
+  <link rel="stylesheet" href="./assets/classic.css">
+  <script src="./assets/app.js" defer></script>
+</head>
+<body>
+<header class="masthead">
+  <a class="brand" href="./" aria-label="Xenobe Rage home">XENOBE <span>RAGE</span></a>
+  <div class="system-status"><i></i> GALACTIC NETWORK <b>DEMO MODE</b></div>
+</header>
+<nav class="main-nav" aria-label="Main navigation">
+  <button class="nav-link active" data-view="command">Command</button>
+  <button class="nav-link" data-view="galaxy">Galaxy</button>
+  <button class="nav-link" data-view="ship">Ship Systems</button>
+  <button class="nav-link" data-view="trade">Trade</button>
+  <button class="nav-link" data-view="missions">Missions</button>
+  <button class="nav-link" data-view="empire">Empire</button>
+</nav>
+<main class="layout">
+  <aside class="sidebar">
+    <section class="panel">
+      <h2>COMMANDER PROFILE</h2>
+      <div class="profile"><div class="avatar">XR</div><div><strong>Guest Commander</strong><small>Unregistered pilot</small><span class="status">LOCAL DEMO</span></div></div>
+      <dl class="stats">
+        <dt>Current sector</dt><dd id="stat-sector">Sol System</dd>
+        <dt>Credits</dt><dd id="stat-credits">12,500</dd>
+        <dt>Ship hull</dt><dd>100%</dd>
+        <dt>Fuel</dt><dd>84 / 100</dd>
+        <dt>Faction</dt><dd>Independent</dd>
+      </dl>
+      <p class="notice">Demo interface. Actions are local only; no account or server connection is active.</p>
+    </section>
+    <section class="panel">
+      <h2>QUICK LINKS</h2>
+      <button class="side-action" data-view="galaxy">» Sector navigation</button>
+      <button class="side-action" data-view="ship">» Ship inventory</button>
+      <button class="side-action" data-view="trade">» Trading exchange</button>
+      <button class="side-action" data-view="missions">» Mission board</button>
+    </section>
+  </aside>
+  <section class="content">
+    <div class="page-heading"><div><p class="eyebrow">DEEP SPACE OPERATIONS // BUILD 0.18</p><h1 id="page-title">Command Center</h1></div><span class="tag">PUBLIC DEMO</span></div>
+    <section class="view active" id="view-command">
+      <div class="panel hero"><div><p class="eyebrow">WELCOME BACK, COMMANDER</p><h2>Space is waiting.</h2><p>Explore sectors, manage your vessel, trade resources, and build your place in the galaxy. This is a static GitHub Pages frontend preview preserving the compact, table-driven feel of classic browser MMOs.</p><button class="primary" data-view="galaxy">Open Galaxy Map</button></div><div class="radar" aria-hidden="true"><span></span><i></i><b></b></div></div>
+      <div class="metric-grid"><article class="panel metric"><small>GALACTIC CREDITS</small><strong id="metric-credits">12,500</strong><span>Starting balance</span></article><article class="panel metric"><small>SHIP CONDITION</small><strong>100%</strong><span>Hull integrity</span></article><article class="panel metric"><small>KNOWN SECTORS</small><strong>06</strong><span>Demo chart data</span></article><article class="panel metric"><small>ACTIVE MISSIONS</small><strong id="metric-missions">02</strong><span>Available locally</span></article></div>
+      <div class="panel"><div class="section-title"><h2>GALACTIC ACTIVITY</h2><span class="muted">SIMULATED FEED</span></div><table><thead><tr><th>TIME</th><th>EVENT</th><th>SECTOR</th><th>STATUS</th></tr></thead><tbody><tr><td>22:41</td><td>Long-range scanners calibrated</td><td>Sol System</td><td><span class="pill good">COMPLETE</span></td></tr><tr><td>22:18</td><td>Trade beacon detected</td><td>Orion Gate</td><td><span class="pill">AVAILABLE</span></td></tr><tr><td>21:52</td><td>Unidentified signal logged</td><td>Vega Reach</td><td><span class="pill warn">INVESTIGATE</span></td></tr></tbody></table></div>
+    </section>
+    <section class="view" id="view-galaxy">
+      <div class="panel"><div class="section-title"><h2>SECTOR NAVIGATION</h2><span class="muted">LOCAL SAMPLE DATA</span></div><p class="muted">Select a sector to update the local command display. This does not issue a server-side warp.</p><div class="sector-grid" id="sector-grid">
+        <button class="sector selected" data-sector="Sol System"><b>01</b><strong>Sol System</strong><small>Secure · Trade hub</small></button><button class="sector" data-sector="Orion Gate"><b>02</b><strong>Orion Gate</strong><small>Neutral · Market</small></button><button class="sector" data-sector="Vega Reach"><b>03</b><strong>Vega Reach</strong><small>Uncharted · Signal</small></button><button class="sector" data-sector="Kestrel Expanse"><b>04</b><strong>Kestrel Expanse</strong><small>Danger · Debris</small></button><button class="sector" data-sector="Nexus Prime"><b>05</b><strong>Nexus Prime</strong><small>Faction · Embassy</small></button><button class="sector" data-sector="Outer Rim"><b>06</b><strong>Outer Rim</strong><small>Frontier · Unknown</small></button>
+      </div><p id="sector-message" class="inline-message" role="status">Selected: Sol System. Navigation is a frontend demo.</p></div>
+    </section>
+    <section class="view" id="view-ship">
+      <div class="panel"><div class="section-title"><h2>VESSEL STATUS</h2><span class="pill good">OPERATIONAL</span></div><h3>XR-01 · Frontier Scout</h3><p class="muted">Light exploration vessel · Mark I hull</p><div class="ship-stats"><div><span>Hull integrity</span><div class="bar"><i style="width:100%"></i></div></div><div><span>Fuel reserves</span><div class="bar"><i style="width:84%"></i></div></div><div><span>Shield charge</span><div class="bar"><i style="width:62%"></i></div></div></div><table><tbody><tr><th>Weapon mount</th><td>Pulse laser · Mk I</td></tr><tr><th>Cargo capacity</th><td>84 / 100 units</td></tr><tr><th>Drive</th><td>Warp coil · Class 1</td></tr><tr><th>Upgrade status</th><td>Awaiting server integration</td></tr></tbody></table></div>
+    </section>
+    <section class="view" id="view-trade">
+      <div class="panel"><div class="section-title"><h2>TRADE EXCHANGE</h2><span class="muted">ILLUSTRATIVE PRICES</span></div><p class="notice">Buying and selling changes only the demo balance. No actual economy, inventory, or backend transaction is involved.</p><table><thead><tr><th>COMMODITY</th><th>UNIT PRICE</th><th>AVAILABILITY</th><th>ACTION</th></tr></thead><tbody id="market-rows"></tbody></table><p class="inline-message" id="trade-message" role="status">Select Buy to test the local interface.</p></div>
+    </section>
+    <section class="view" id="view-missions">
+      <div class="panel"><div class="section-title"><h2>MISSION BOARD</h2><span class="muted">TRAINING CONTRACTS</span></div><div class="mission-list"><article><div><span class="pill good">AVAILABLE</span><h3>Supply Run: Orion Gate</h3><p>Deliver a sample cargo manifest to the neutral trade station.</p><small>Reward: 1,200 credits · Difficulty: Easy</small></div><button class="secondary mission-btn" data-mission="Supply Run: Orion Gate">Accept</button></article><article><div><span class="pill warn">AVAILABLE</span><h3>Unknown Signal</h3><p>Investigate the signal beacon detected near Vega Reach.</p><small>Reward: 2,500 credits · Difficulty: Moderate</small></div><button class="secondary mission-btn" data-mission="Unknown Signal">Accept</button></article></div><p class="inline-message" id="mission-message" role="status">Mission acceptance is stored only in this page session.</p></div>
+    </section>
+    <section class="view" id="view-empire">
+      <div class="panel"><div class="section-title"><h2>EMPIRE OVERVIEW</h2><span class="muted">GUEST PROFILE</span></div><table><tbody><tr><th>Empire name</th><td>Independent Outpost</td></tr><tr><th>Controlled planets</th><td>0</td></tr><tr><th>Corporation</th><td>Unaffiliated</td></tr><tr><th>Research</th><td>Not connected</td></tr><tr><th>Rankings</th><td>Not connected</td></tr></tbody></table><p class="notice">Real accounts, rankings, persistent progress, and multiplayer systems require the PHP/MySQL backend. GitHub Pages serves static files only.</p></div>
+    </section>
+  </section>
+</main>
+<footer><span>XENOBE RAGE</span> · CLASSIC SPACE MMO INTERFACE · GITHUB PAGES DEMO <span>NO BACKEND CONNECTION</span></footer>
+</body>
+</html>
